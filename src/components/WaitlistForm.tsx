@@ -22,8 +22,8 @@ export function WaitlistForm({ variant = "hero" }: { variant?: "hero" | "inline"
       <p
         className={
           variant === "hero"
-            ? "rounded-2xl bg-highlight px-5 py-4 font-display text-lg font-bold text-ink"
-            : "font-semibold text-field-deep"
+            ? "rounded-2xl bg-field px-5 py-4 font-display text-lg font-bold text-cream"
+            : "font-semibold text-field"
         }
       >
         You&apos;re in the herd. We&apos;ll hit you when Clemson goes live.
@@ -50,11 +50,11 @@ export function WaitlistForm({ variant = "hero" }: { variant?: "hero" | "inline"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="tiger@clemson.edu"
-        className="min-h-12 flex-1 rounded-2xl border-2 border-ink/15 bg-foam px-4 text-base text-ink outline-none placeholder:text-muted focus:border-field"
+        className="min-h-12 flex-1 rounded-2xl border border-white/15 bg-panel px-4 text-base text-ink outline-none placeholder:text-muted focus:border-field"
       />
       <button
         type="submit"
-        className="min-h-12 rounded-2xl bg-ink px-6 font-display text-base font-bold tracking-wide text-highlight transition hover:-translate-y-0.5 hover:bg-field-deep"
+        className="min-h-12 rounded-2xl bg-field px-6 font-display text-base font-bold tracking-wide text-cream transition hover:-translate-y-0.5 hover:bg-field-deep"
       >
         Join the herd
       </button>

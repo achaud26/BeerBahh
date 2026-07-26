@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Figtree, Syne } from "next/font/google";
+import { Providers } from "@/components/Providers";
 import "./globals.css";
 
 const syne = Syne({
@@ -17,11 +18,11 @@ const figtree = Figtree({
 export const metadata: Metadata = {
   title: "BeerBahh — Find Your Herd",
   description:
-    "Real-time nightlife radar for college towns. Live crowd levels, drink deals, and bar chat — starting in Clemson.",
+    "The WAZE of going out. Live crowd levels, drink deals, and bar chat for college nights — starting in Clemson.",
   openGraph: {
     title: "BeerBahh — Find Your Herd",
     description:
-      "Every night is a great night. Live bar intel for Clemson students.",
+      "Nightlife radar for college towns. Know if going out is the right move.",
     type: "website",
   },
 };
@@ -36,7 +37,9 @@ export default function RootLayout({
       lang="en"
       className={`${syne.variable} ${figtree.variable} h-full`}
     >
-      <body className="min-h-full font-sans antialiased">{children}</body>
+      <body className="min-h-full font-sans antialiased">
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

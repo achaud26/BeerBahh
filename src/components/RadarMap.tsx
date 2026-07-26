@@ -9,7 +9,12 @@ import {
 } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { Bar, CLEMSON_CENTER, crowdCopy } from "@/data/bars";
+import {
+  Bar,
+  CLEMSON_CENTER,
+  CLEMSON_DEFAULT_ZOOM,
+  crowdCopy,
+} from "@/data/bars";
 
 function crowdIcon(crowd: Bar["crowd"], selected: boolean) {
   const color = crowdCopy[crowd].color;
@@ -21,7 +26,7 @@ function crowdIcon(crowd: Bar["crowd"], selected: boolean) {
     html: `
       <div style="position:relative;width:${size}px;height:${size}px;">
         <span style="position:absolute;inset:0;border-radius:999px;background:${color};opacity:0.35;animation:pulse-ring 1.8s ease-out infinite;"></span>
-        <span style="position:absolute;inset:4px;border-radius:999px;background:${color};border:2.5px solid #0C120D;box-shadow:0 4px 0 #0C120D;"></span>
+        <span style="position:absolute;inset:4px;border-radius:999px;background:${color};border:2.5px solid #f4f7f4;box-shadow:0 4px 12px rgba(0,0,0,0.45);"></span>
       </div>
     `,
   });
@@ -48,7 +53,7 @@ export function RadarMap({ bars, selectedId, onSelect }: RadarMapProps) {
   return (
     <MapContainer
       center={[CLEMSON_CENTER.lat, CLEMSON_CENTER.lng]}
-      zoom={15}
+      zoom={CLEMSON_DEFAULT_ZOOM}
       scrollWheelZoom
       className="h-full w-full"
       zoomControl={false}
